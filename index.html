@@ -1,443 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- meta -->
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<title>Arun M — Senior Unity Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Folio - Personal Portfolio Template</title>
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0f1a;
+  --card: #121a2a;
+  --accent: #38bdf8;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+* { box-sizing: border-box; }
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-  <link href="lib/hover/hover.min.css" rel="stylesheet">
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: linear-gradient(180deg, #020617, #020617 40%, #020617);
+  color: var(--text);
+}
 
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+a { color: var(--accent); text-decoration: none; }
 
-  <!-- Responsive css -->
-  <link href="css/responsive.css" rel="stylesheet">
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="images/favicon.png">
+header {
+  padding: 100px 20px;
+  background: radial-gradient(circle at 30% 20%, #1f2937, #020617 60%);
+}
 
-  <!-- =======================================================
-    Theme Name: Folio
-    Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero-sub {
+  font-size: 20px;
+  color: var(--accent);
+  margin-top: 10px;
+}
+
+.hero-desc {
+  margin-top: 20px;
+  max-width: 720px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #020617;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+  line-height: 1.6;
+}
+
+.skill {
+  display: inline-block;
+  background: #020617;
+  border: 1px solid #1f2937;
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin: 6px;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  border-top: 1px solid #1f2937;
+}
+
+.badge {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* PROJECTS */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .15s ease, border-color .15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.project-shot {
+  height: 170px;
+  background: repeating-linear-gradient(
+    45deg,
+    #020617,
+    #020617 10px,
+    #0f172a 10px,
+    #0f172a 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.project-body {
+  padding: 18px;
+}
+
+.project-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width:600px) {
+  .hero-title { font-size: 34px; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- start section navbar -->
-  <nav id="main-nav">
-    <div class="row">
-      <div class="container">
-
-        <div class="logo">
-          <a href="index.html"><img src="images/logo.png" alt="logo"></a>
-        </div>
-
-        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
-
-        <ul class="nav-menu list-unstyled">
-          <li><a href="#header" class="smoothScroll">Home</a></li>
-          <li><a href="#about" class="smoothScroll">About</a></li>
-          <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
-          <li><a href="#journal" class="smoothScroll">Blog</a></li>
-          <li><a href="#contact" class="smoothScroll">Contact</a></li>
-        </ul>
-
-      </div>
+<header>
+  <div class="container">
+    <div class="badge">PORTFOLIO</div>
+    <div class="hero-title">Arun M</div>
+    <div class="hero-sub">Senior Unity Developer</div>
+    <div class="hero-desc">
+      Senior Unity developer with 8+ years of experience delivering mobile, WebGL, multiplayer,
+      AR and VR applications. Specialized in gameplay architecture, optimization, and shipping
+      production‑ready interactive products.
     </div>
-  </nav>
-  <!-- End section navbar -->
-
-
-  <!-- start section header -->
-  <div id="header" class="home">
-
-    <div class="container">
-      <div class="header-content">
-        <h1>I'm <span class="typed"></span></h1>
-        <p>Unity3D Game Programmer</p>
-
-        <ul class="list-unstyled list-social">
-          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-          <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-          <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
-          <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-        </ul>
-      </div>
-    </div>
+    <a href="#projects" class="btn">View Projects</a>
   </div>
-  <!-- End section header -->
+</header>
 
-
-  <!-- start section about us -->
-  <div id="about" class="paddsection">
-    <div class="container">
-      <div class="row justify-content-between">
-
-        <div class="col-lg-4 ">
-          <div class="div-img-bg">
-            <div class="about-img">
-              <img src="images/me.jpg" class="img-responsive" alt="me">
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-7">
-          <div class="about-descr">
-
-            <p class="p-heading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  </p>
-            <p class="separator">when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
+<section class="container">
+  <h2>About Me</h2>
+  <div class="card">
+    I build scalable and performant Unity applications across games and immersive tech. My work
+    spans hybrid‑casual mobile titles, multiplayer casino systems, WebGL games, and enterprise VR
+    training platforms. I work closely with art and technical teams to ship optimized cross‑platform builds.
   </div>
-  <!-- end section about us -->
+</section>
 
+<section class="container">
+  <h2>Experience</h2>
+  <div class="grid">
 
-  <!-- start section services -->
-  <div id="services">
-    <div class="container">
+    <div class="card">
+      <h3>Senior Game Developer — Gamesmith Interactive</h3>
+      <p>2024 — Present</p>
+      <ul>
+        <li>Published hybrid casual titles</li>
+        <li>Market testing & KPI optimization</li>
+        <li>Cross‑platform deployment</li>
+      </ul>
+    </div>
 
-        <div class="services-carousel owl-theme">
+    <div class="card">
+      <h3>Senior Unity Developer — Simelabs</h3>
+      <p>2022 — 2024</p>
+      <ul>
+        <li>AR/VR/Metaverse experiences</li>
+        <li>Enterprise virtual training apps</li>
+        <li>Award‑winning VR showcase project</li>
+      </ul>
+    </div>
 
-          <div class="services-block">
+    <div class="card">
+      <h3>Senior Game Developer — Infocom Software</h3>
+      <p>2021 — 2022</p>
+      <ul>
+        <li>Casino & multiplayer games</li>
+        <li>Photon networking</li>
+        <li>Mobile store publishing</li>
+      </ul>
+    </div>
 
-            <i class="ion-ios-browsers-outline"></i>
-            <span>UI/UX DESIGN</span>
-            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-
-          </div>
-
-          <div class="services-block">
-
-            <i class="ion-ios-lightbulb-outline"></i>
-            <span>BRAND IDENTITY</span>
-            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-
-          </div>
-
-          <div class="services-block">
-
-            <i class="ion-ios-color-wand-outline"></i>
-            <span>WEB DESIGN</span>
-            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-
-          </div>
-
-          <div class="services-block">
-
-            <i class="ion-social-android-outline"></i>
-            <span>MOBILE APPS</span>
-            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-
-          </div>
-
-          <div class="services-block">
-
-            <i class="ion-ios-analytics-outline"></i>
-            <span>Analytics</span>
-            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-
-          </div>
-
-          <div class="services-block">
-
-            <i class="ion-ios-camera-outline"></i>
-            <span>PHOTOGRAPHY</span>
-            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-
-          </div>
-
-        </div>
-
+    <div class="card">
+      <h3>Game Programmer — Studd Technology Solutions</h3>
+      <p>2016 — 2021</p>
+      <ul>
+        <li>WebGL multiplayer games</li>
+        <li>FPS, racing & runner titles</li>
+        <li>Browser optimization</li>
+      </ul>
     </div>
 
   </div>
-  <!-- end section services -->
+</section>
 
+<section class="container" id="projects">
+  <h2>Selected Projects</h2>
 
-  <!-- start section portfolio -->
-  <div id="portfolio" class="text-center paddsection">
+  <div class="project-grid">
 
-    <div class="container">
-      <div class="section-title text-center">
-        <h2>My Portfolio</h2>
-      </div>
-    </div>
+    <!-- 12 PROJECT SLOTS -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Owled</div><div class="project-desc">Hybrid casual mobile game.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Cubed</div><div class="project-desc">Puzzle casual title.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Crazy Cubes</div><div class="project-desc">Hybrid casual prototype.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Blackjack 3D Multiplayer</div><div class="project-desc">Realtime multiplayer casino.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Roulette Multiplayer</div><div class="project-desc">Network casino system.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Studd WebGL Series</div><div class="project-desc">Browser & WebGL titles.</div></div></div>
 
-          <div class="portfolio-list">
-
-            <ul class="nav list-unstyled" id="portfolio-flters">
-              <li class="filter filter-active" data-filter=".all">all</li>
-              <li class="filter" data-filter=".branding">branding</li>
-              <li class="filter" data-filter=".mockups">mockups</li>
-              <li class="filter" data-filter=".uikits">ui kits</li>
-              <li class="filter" data-filter=".webdesign">web design</li>
-              <li class="filter" data-filter=".photography">photography</li>
-            </ul>
-
-          </div>
-
-          <div class="portfolio-container">
-
-            <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits webdesign">
-              <a class="popup-img" href="images/portfolio/1.jpg">
-                <img src="images/portfolio/1.jpg" alt="img">
-              </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups uikits photography">
-              <a class="popup-img" href="images/portfolio/2.jpg">
-                <img src="images/portfolio/2.jpg"  alt="img">
-              </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding webdesig photographyn">
-              <a class="popup-img" href="images/portfolio/3.jpg">
-                <img src="images/portfolio/3.jpg" alt="img">
-              </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups webdesign photography">
-              <a class="popup-img" href="images/portfolio/4.jpg">
-                <img src="images/portfolio/4.jpg" alt="img">
-              </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits photography">
-              <a class="popup-img" href="images/portfolio/5.jpg">
-                <img src="images/portfolio/5.jpg" alt="img">
-              </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups uikits webdesign">
-              <a class="popup-img" href="images/portfolio/6.jpg">
-                <img src="images/portfolio/6.jpg" alt="img">
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Hyper Drift Run</div><div class="project-desc">Arcade racing prototype.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Neon Shooter Arena</div><div class="project-desc">Action shooter prototype.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Stack Builder 3D</div><div class="project-desc">Hyper casual stacking.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Portal Escape VR</div><div class="project-desc">VR puzzle escape.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Galaxy Miner</div><div class="project-desc">Idle space loop.</div></div></div>
+    <div class="project-card"><div class="project-shot">Screenshot Slot</div><div class="project-body"><div class="project-title">Speed Tap Duel</div><div class="project-desc">Reaction mini‑game.</div></div></div>
 
   </div>
-  <!-- End section portfolio -->
+</section>
 
-
-  <!-- start section journal -->
-  <div id="journal" class="text-left paddsection">
-
-    <div class="container">
-      <div class="section-title text-center">
-        <h2>journal</h2>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="journal-block">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info">
-
-              <a href="blog-single.html"><img src="images/blog-post-1.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info">
-
-              <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="#blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info">
-
-              <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
-
-              <div class="journal-txt">
-
-                <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
+<section class="container">
+  <h2>Skills</h2>
+  <div class="card">
+    <span class="skill">Unity 3D</span>
+    <span class="skill">C#</span>
+    <span class="skill">AR/VR/XR</span>
+    <span class="skill">Photon</span>
+    <span class="skill">WebGL</span>
+    <span class="skill">Android</span>
+    <span class="skill">iOS</span>
+    <span class="skill">Firebase</span>
+    <span class="skill">IAP</span>
+    <span class="skill">Ads</span>
+    <span class="skill">Optimization</span>
+    <span class="skill">API Integration</span>
   </div>
-  <!-- End section journal -->
+</section>
 
-
-  <!-- start sectoion contact -->
-  <div id="contact" class="paddsection">
-    <div class="container">
-      <div class="contact-block1">
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="contact-contact">
-
-              <h2 class="mb-30">GET IN TOUCH</h2>
-
-              <ul class="contact-details">
-                <li><span>Kattungal, Thondankulangara</span></li>
-                <li><span>Alappuzha, Kerala, India</span></li>
-                <li><span>+91 9946011971</span></li>
-                <li><span>arunkattungal@gmail.com</span></li>
-              </ul>
-
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="row">
-
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-
-                <div class="col-lg-6">
-                  <div class="form-group contact-block1">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <textarea class="form-control" name="message" rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                    <div class="validation"></div>
-                  </div>
-                </div>
-
-                <div class="col-lg-12">
-                  <input type="submit" class="btn btn-defeault btn-send" value="Send message">
-                </div>
-
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="container" id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: arunkattungal@gmail.com</p>
+    <p>Phone: +91 7012975383</p>
+    <p>Location: Kerala, India</p>
   </div>
-  <!-- start sectoion contact -->
+</section>
 
-
-  <!-- start section footer -->
-  <div id="footer" class="text-center">
-    <div class="container">
-      <div class="socials-media text-center">
-
-        <ul class="list-unstyled">
-          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-          <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-          <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
-          <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-        </ul>
-
-      </div>
-
-      <p>&copy; Copyrights Folio. All rights reserved.</p>
-
-      <div class="credits">
-        <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
-        -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>
-        Logo Designed By <a href=null>Logo source Logodesign.net</a>
-      </div>
-
-    </div>
-  </div>
-  <!-- End section footer -->
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/typed/typed.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+<footer>
+  © 2026 Arun M — Unity Developer Portfolio
+</footer>
 
 </body>
-
 </html>
